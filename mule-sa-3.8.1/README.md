@@ -19,14 +19,26 @@ docker run -d --name echo-mule -p 8081:8081 -v /tmp/echo-mule:/opt/mule/apps/ech
 
 ```
 
-## Startup and Shutdown Script
-
+### Startup and Shutdown Script Muel Service (inside the container)
+```
 $MULE_HOME/bin/mule status|stop|Start|restart|dump|console
 
+```
+
+### To check the stdout :
+```
+docker logs YOUR-DOCKER-NAME
+```
+
+### To stop the container :
+```
+docker kill YOUR-DOCKER-NAME
+```
 
 ## Passing Parameters to the JVM via the Startup Command
+```
 $MULE_HOME/bin/mule start -D-Mmule.mmc.bind.port=7783-7883
-
+```
 
 ## Use it with your Mule application
 
@@ -38,24 +50,19 @@ $MULE_HOME/bin/mule start -D-Mmule.mmc.bind.port=7783-7883
 |/opt/mule/logs | Log files
 |/opt/mule/domains | Domains directory
 
-## Packaging Your Application
+
+## Packaging Your Muel Application
+Muel Anypoint Studio supports the ability to import and export your projects or various project elements. [more...](https://docs.mulesoft.com/anypoint-studio/v/6/importing-and-exporting-in-studio)
 
 
 
 ## Running Your Application on Docker
 
 ```
-docker run -d -name YOUR-DOCKER-NAME -p 8888:8888 -v /somewhere/where/myapps/is:/opt/mule/apps -v /somewhere/where/iwanttolog:/opt/mule/logs mule-standalone:3.8.1
 
-````
+docker run -d --name echo-mule -p 8081:8081 -v /tmp/echo-mule:/opt/mule/apps/echo-mule -v /tmp/logs:/opt/mule/logs mule-standalone:3.8.1
 
-To check the stdout :
-```
-docker logs YOUR-DOCKER-NAME
 ```
 
-To stop the container :
-```
-docker kill YOUR-DOCKER-NAME
-```
+
 
