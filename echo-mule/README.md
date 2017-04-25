@@ -1,5 +1,5 @@
 ## Echo "Hello CALLER"
-The application 
+The application is a simple HTTP flow listening on PORT 8081 and logging incoming requests and responds with "Hello CALLER"
 
 
 ## Building Docker & Running 
