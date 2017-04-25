@@ -13,9 +13,10 @@ ENV MULE_APP "default"
 
 
 RUN wget -O /tmp/mule-standalone-3.8.1.tar.gz https://repository.mulesoft.org/nexus/content/repositories/releases/org/mule/distributions/mule-standalone/3.8.1/mule-standalone-3.8.1.tar.gz 
-RUN wget -O /tmp/echo-mule.tar 
-RUN cd /opt && tar xvzf ~/mule-standalone-3.8.1.tar.gz
-RUN rm ~/mule-standalone-3.8.1.tar.gz
+RUN wget -O /tmp/echo-mule.tar https://github.com/rezamt/docker-pack/blob/master/echo-mule/Docker/echo-mule.tar
+RUN cd /opt && tar xvzf /tmp/mule-standalone-3.8.1.tar.gz
 RUN ln -s /opt/mule-standalone-3.8.1 /opt/mule 
-
+RUN cd /opt/mule/apps && tar xvzf /tmp/echo-mule.tar
+RUN rm /tmp/mule-standalone-3.8.1.tar.gz
+RUN rm /tmp/echo-mule.tar
 CMD [ "/opt/mule/bin/mule" ]
