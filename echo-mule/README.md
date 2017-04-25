@@ -1,10 +1,7 @@
 ## Echo "Hello CALLER"
 The application is a simple HTTP flow listening on PORT 8081 and logging incoming requests and responds with "Hello CALLER"
 
-
-
-Inline-style: 
-![alt text](https://github.com/adam-p/markdown-here/raw/master/src/common/images/icon48.png "Logo Title Text 1")
+![alt text](https://github.com/rezamt/docker-pack/blob/master/echo-mule/docs/echo-mule.png "Application Flow")
 
 
 ## Building Docker & Running 
