@@ -9,15 +9,23 @@ Based on java:8 with Mule ESB 3.8.1 (installed in /opt/mule)
 docker build -t mule-standalone:3.8.1 .
 
 ```
-
-## Checking Docker image
-
-Access your built image and see how it's built
+## Deploying your Mule Application to the runtime environment
 
 ```
-docker run -it mule-standalone:3.8.1 bash
+docker run -d --name DOCKER_NAME -p 8081:8081 -v /somewhere/where/myapps/is:/opt/mule/apps -v /somewhere/where/iwanttolog:/opt/mule/logs codingtony/mule
+
+e.g. 
+docker run -d --name echo-mule -p 8081:8081 -v /tmp/echo-mule:/opt/mule/apps/echo-mule -v /tmp/logs:/opt/mule/logs mule-standalone:3.8.1
 
 ```
+
+## Startup and Shutdown Script
+
+$MULE_HOME/bin/mule status|stop|Start|restart|dump|console
+
+
+## Passing Parameters to the JVM via the Startup Command
+$MULE_HOME/bin/mule start -D-Mmule.mmc.bind.port=7783-7883
 
 
 ## Use it with your Mule application
