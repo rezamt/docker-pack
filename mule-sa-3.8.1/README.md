@@ -65,4 +65,7 @@ docker run -d --name echo-mule -p 8081:8081 -v /tmp/echo-mule:/opt/mule/apps/ech
 ```
 
 
+## References 
++ [Mule Application Format](https://docs.mulesoft.com/mule-user-guide/v/3.8/application-format)
++ [Importing and Exporting in Studio](https://docs.mulesoft.com/anypoint-studio/v/6/importing-and-exporting-in-studio)
 
