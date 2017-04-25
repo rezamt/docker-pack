@@ -1,9 +1,9 @@
-#Dockerfile for Mule Standalone ESB
+## Dockerfile for Mule Standalone ESB
 
 Based on java:8 with Mule ESB 3.8.1 (installed in /opt/mule)
 
 
-##Building Docker Mule Standalone 3.8.1
+## Building Docker Mule Standalone 3.8.1
 
 ```
 docker build -t mule-standalone:3.8.1 .
@@ -30,13 +30,13 @@ $MULE_HOME/bin/mule start -D-Mmule.mmc.bind.port=7783-7883
 
 ## Use it with your Mule application
 
-  Directories           | Description
-     
-1|/opt/mule/apps         | Application directory
-2|/opt/mule/conf         | Configuration & log4j configuration. wrapper.conf is mandatory
-3|/opt/mule/logs         | Log files
-4|/opt/mule/domains      | Domains directory
-
+### Use it with your Mule application
+| important directories | description
+|--- |---
+|/opt/mule/apps | Application directory
+|/opt/mule/conf | Configuration & log4j configuration. wrapper.conf is mandatory
+|/opt/mule/logs | Log files
+|/opt/mule/domains | Domains directory
 
 ## Packaging Your Application
 
